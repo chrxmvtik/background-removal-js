@@ -40,7 +40,12 @@ module.exports = (env, argv) => {
       ]
     },
     resolve: {
-      extensions: ['.ts', '.js']
+      extensions: ['.ts', '.js'],
+      fallback: {
+        "fs": false,
+        "os": false,
+        "path": false
+      }
     },
     optimization: {
       splitChunks: {
@@ -51,7 +56,7 @@ module.exports = (env, argv) => {
   const umdConfig = {
     ...commonConfig,
     entry: './src/browser.ts',
-    target: 'web',
+    target: 'node',
     output: {
       filename: 'browser.js',
       path: path.resolve(__dirname, 'dist'),

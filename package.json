@@ -1,7 +1,7 @@
 {
-  "name": "@imgly/background-removal",
-  "version": "1.0.5",
-  "description": "Background Removal in the Browser",
+  "name": "@chrxmvtik/background-removal",
+  "version": "0.0.2",
+  "description": "Background Removal in the Browser/Node",
   "keywords": [
     "background-removal",
     "client-side",
@@ -25,7 +25,11 @@
   },
   "main": "./dist/browser.js",
   "module": "./dist/browser.mjs",
-  "browser": "./dist/browser.js",
+    "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
+  },
   "homepage": "https://img.ly/showcases/cesdk/web/background-removal/web",
   "types": "./dist/browser.d.ts",
   "files": [

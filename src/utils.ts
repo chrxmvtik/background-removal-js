@@ -1,13 +1,13 @@
 export {
-  imageDecode,
-  imageEncode,
+  calculateProportionalSize,
+  ensureAbsoluteURL,
   imageBitmapToImageData,
   imageDataResize,
   imageDataToFloat32Array,
-  calculateProportionalSize,
-  isAbsoluteURL,
-  ensureAbsoluteURL,
-  imageSourceToImageData
+  imageDecode,
+  imageEncode,
+  imageSourceToImageData,
+  isAbsoluteURL
 };
 
 async function imageDecode(blob: Blob): Promise<ImageData> {
@@ -96,7 +96,7 @@ function ensureAbsoluteURL(url: string): string {
   if (isAbsoluteURL(url)) {
     return url;
   } else {
-    return new URL(url, window.location.href).href;
+    return new URL(url, globalThis.location.href).href;
   }
 }
 
