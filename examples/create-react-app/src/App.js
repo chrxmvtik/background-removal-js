@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react';
 import './App.css';
-import { useState, useEffect } from 'react';
 
-import removeBackground from '@imgly/background-removal';
+import removeBackground from '@chrxmvtik/background-removal';
 
 function calculateSecondsBetweenDates(startDate, endDate) {
   const milliseconds = endDate - startDate;
@@ -51,8 +51,6 @@ function App() {
     setImageUrl(randomImage);
 
     const imageBlob = await removeBackground(randomImage, {
-      publicPath: '/static/js/',
-      // debug: true,
       progress: (key, current, total) => {
         const [type, subtype] = key.split(':');
         setCaption(
